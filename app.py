@@ -57,7 +57,7 @@ def view_user(uid):
 
 @app.route("/providers")
 def choose_provider():
-    if current_user.is_authenticated():
+    if current_user.is_authenticated:
         return redirect(url_for("index"))
 
     return render_template("providers.html", providers=config.authomatic_config.keys())
@@ -66,7 +66,7 @@ def choose_provider():
 @app.route("/login/<provider_name>", methods=["GET", "POST"])
 def login(provider_name=config.default_provider):
     # Redirect back to index if this action is accessed when already logged in.
-    if current_user.is_authenticated():
+    if current_user.is_authenticated:
         return redirect(url_for("index"))
 
     if provider_name not in config.authomatic_config.keys():
