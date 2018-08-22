@@ -1,5 +1,5 @@
 from flask import Flask, abort, render_template, make_response, request, redirect, url_for
-from flask.ext.login import LoginManager, UserMixin, login_required, login_user, logout_user, current_user
+from flask_login import LoginManager, UserMixin, login_required, login_user, logout_user, current_user
 from playhouse.flask_utils import FlaskDB
 from peewee import CharField, DateField
 from authomatic import Authomatic
